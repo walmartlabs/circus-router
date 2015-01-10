@@ -1,4 +1,4 @@
-var CircusRouter = require('circus-router'),
+var CircusRouter = require('../'),
     expect = require('chai').expect;
 
 describe('circus-router', function() {
