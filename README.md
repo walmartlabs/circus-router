@@ -5,6 +5,8 @@ In-source router parser for [Circus][] components dependencies, allowing for sma
 
 ## Usage
 
+See the example directory for an example of a complete Backbone application.
+
 ### Configuration
 
 Used as a preprocessor for the `Circus.config` method:
