@@ -49,7 +49,7 @@ describe('loader plugin', function() {
       expect(status.compilation.warnings[2]).to.match(/loader.js:\d+ - Circus.loader used to load module "`.\/router-no-routes.js" declaring no route/);
 
       // Verify the chunk division
-      expect(status.compilation.chunks.length).to.equal(4);
+      expect(status.compilation.chunks.length).to.equal(5);
 
       // Verify the loader boilerplate
       var output = fs.readFileSync(outputDir + '/bundle.js').toString();
@@ -58,6 +58,7 @@ describe('loader plugin', function() {
       // Verify the module map output
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
       expect(pack).to.eql({
+        "bootstrap": "bootstrap.js",
         "chunks": [
           {"js": "bundle.js", "css": "0.bundle.css"},
           {"js": "1.bundle.js"},
@@ -139,7 +140,7 @@ describe('loader plugin', function() {
       expect(status.compilation.warnings[0]).to.match(/loader-multiple.js:4 - Circus.loader used multiple times in one chunk/);
 
       // Verify the chunk division
-      expect(status.compilation.chunks.length).to.equal(3);
+      expect(status.compilation.chunks.length).to.equal(4);
 
       // Verify the loader boilerplate
       var output = fs.readFileSync(outputDir + '/bundle.js').toString();
@@ -149,6 +150,7 @@ describe('loader plugin', function() {
       // Verify the module map output
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
       expect(pack).to.eql({
+        "bootstrap": "bootstrap.js",
         "chunks": [
           {"js": "bundle.js"},
           {"js": "1.bundle.js"},
@@ -270,7 +272,7 @@ describe('loader plugin', function() {
       expect(status.compilation.errors).to.be.empty;
       expect(status.compilation.warnings).to.be.empty;
 
-      expect(status.compilation.chunks.length).to.equal(2);
+      expect(status.compilation.chunks.length).to.equal(3);
 
       done();
     });
