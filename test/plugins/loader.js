@@ -57,8 +57,10 @@ describe('loader plugin', function() {
 
       // Verify the module map output
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
+      delete pack.circusVersion;   // To avoid erroring the tests
       expect(pack).to.eql({
         "bootstrap": "bootstrap.js",
+        "components": [],
         "chunks": [
           {"js": "bundle.js", "css": "0.bundle.css"},
           {"js": "1.bundle.js"},
@@ -142,8 +144,10 @@ describe('loader plugin', function() {
 
       // Verify the module map output
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
+      delete pack.circusVersion;   // To avoid erroring the tests
       expect(pack).to.eql({
         "bootstrap": "bootstrap.js",
+        "components": [],
         "chunks": [
           {"js": "bundle.js"},
           {"js": "1.bundle.js"},
