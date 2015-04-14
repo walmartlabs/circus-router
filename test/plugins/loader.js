@@ -283,6 +283,32 @@ describe('loader plugin', function() {
       done();
     });
   });
+  it.only('should include app data if passed', function(done) {
+    var entry = path.resolve(__dirname + '/../fixtures/loader-data.js');
+
+    var config = {
+      entry: entry,
+      output: {path: outputDir},
+      circusNamespace: 'Circus',
+
+      externals: {
+        'circus': 'Circus'
+      }
+    };
+    config = CircusRouter.config(config);
+    config = Circus.config(config);
+
+    webpack(config, function(err, status) {
+      expect(err).to.not.exist;
+      expect(status.compilation.errors).to.be.empty;
+      expect(status.compilation.warnings).to.be.empty;
+
+      var output = fs.readFileSync(outputDir + '/bundle.js').toString();
+      expect(output).to.match(/Circus.loader\(__webpack_require__, \{"data":\{root: '\/root'\},"modules":\{"2":\{"chunk":1\}\},"routes":\{"\/foo":2,"\/bar":2\}\}\);/);
+
+      done();
+    });
+  });
   it('should handle typeof', function(done) {
     var config = {
       entry: __dirname + '/../fixtures/eval-loader.js',
