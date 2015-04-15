@@ -56,6 +56,17 @@ Will generate two different chunks, one for the home router and one for the item
 
 Generally a loader is used for simple bootstrapping of an application, along with core libraries.
 
+If two parameters are passed, the first paramter is passed to the loader runtime and maybe used as needed for initialization.
+
+```javascript
+Circus.loader({root: '/foo'}, [
+  './home',
+  './items'
+]);
+```
+
+Would pass the object containing `root` to the generated module json at runtime.
+
 ### Generated Code
 
 The loader will generate a JavaScript construct similar to the following:
