@@ -2,7 +2,12 @@
 
 ## Development
 
-[Commits](https://github.com/walmartlabs/circus-router/compare/v1.1.0...master)
+[Commits](https://github.com/walmartlabs/circus-router/compare/v1.1.1...master)
+
+## v1.1.1 - April 15th, 2015
+- Do not eval loader data arg expression - 1a893ea
+
+[Commits](https://github.com/walmartlabs/circus-router/compare/v1.1.0...v1.1.1)
 
 ## v1.1.0 - April 15th, 2015
 - [#1](https://github.com/walmartlabs/circus-router/pull/1) - Add data field to loader ([@kpdecker](https://api.github.com/users/kpdecker))
