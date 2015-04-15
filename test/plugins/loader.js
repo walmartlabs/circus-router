@@ -283,7 +283,7 @@ describe('loader plugin', function() {
       done();
     });
   });
-  it.only('should include app data if passed', function(done) {
+  it('should include app data if passed', function(done) {
     var entry = path.resolve(__dirname + '/../fixtures/loader-data.js');
 
     var config = {
