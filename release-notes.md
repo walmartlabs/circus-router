@@ -2,7 +2,12 @@
 
 ## Development
 
-[Commits](https://github.com/walmartlabs/circus-router/compare/v1.0.1...master)
+[Commits](https://github.com/walmartlabs/circus-router/compare/v1.1.0...master)
+
+## v1.1.0 - April 15th, 2015
+- [#1](https://github.com/walmartlabs/circus-router/pull/1) - Add data field to loader ([@kpdecker](https://api.github.com/users/kpdecker))
+
+[Commits](https://github.com/walmartlabs/circus-router/compare/v1.0.1...v1.1.0)
 
 ## v1.0.1 - February 6th, 2015
 - Fix exec under Webpack 1.5 - df9662c
