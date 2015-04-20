@@ -59,60 +59,60 @@ describe('loader plugin', function() {
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
       delete pack.circusVersion;   // To avoid erroring the tests
       expect(pack).to.eql({
-        "bootstrap": "bootstrap.js",
-        "components": [],
-        "chunks": [
-          {"js": "bundle.js", "css": "0.bundle.css"},
-          {"js": "1.bundle.js"},
-          {"js": "2.bundle.js"},
-          {"js": "3.bundle.js"}
+        'bootstrap': 'bootstrap.js',
+        'components': [],
+        'chunks': [
+          {'js': 'bundle.js', 'css': '0.bundle.css'},
+          {'js': '1.bundle.js'},
+          {'js': '2.bundle.js'},
+          {'js': '3.bundle.js'}
         ],
-        "modules": {
-          "0": {
-            "chunk": 0,
-            "name": "pack/test/fixtures/loader"
+        'modules': {
+          '0': {
+            'chunk': 0,
+            'name': 'pack/test/fixtures/loader'
           },
-          "2": {
-            "chunk": 1,
-            "name": "pack/test/fixtures/router1"
+          '2': {
+            'chunk': 1,
+            'name': 'pack/test/fixtures/router1'
           },
-          "3": {
-            "chunk": 2,
-            "name": "pack/test/fixtures/router-imported"
+          '3': {
+            'chunk': 2,
+            'name': 'pack/test/fixtures/router-imported'
           },
-          "4": {
-            "chunk": 3,
-            "name": "pack/test/fixtures/router-no-routes"
+          '4': {
+            'chunk': 3,
+            'name': 'pack/test/fixtures/router-no-routes'
           }
         },
-        "routes": {
-          "/foo": 3,
-          "/bar": 3
+        'routes': {
+          '/foo': 3,
+          '/bar': 3
         },
-        "files": [
-          "bundle.js",
-          "0.bundle.css",
-          "bundle.js.map",
-          "1.bundle.js",
-          "1.bundle.js.map",
-          "2.bundle.js",
-          "2.bundle.js.map",
-          "3.bundle.js",
-          "3.bundle.js.map"
+        'files': [
+          'bundle.js',
+          '0.bundle.css',
+          'bundle.js.map',
+          '1.bundle.js',
+          '1.bundle.js.map',
+          '2.bundle.js',
+          '2.bundle.js.map',
+          '3.bundle.js',
+          '3.bundle.js.map'
         ],
-        "published": {
-          "bundle.js": "bundle.js",
-          "bundle.js.map": "bundle.js.map",
-          "1.bundle.js": "1.bundle.js",
-          "1.bundle.js.map": "1.bundle.js.map",
-          "2.bundle.js": "2.bundle.js",
-          "2.bundle.js.map": "2.bundle.js.map",
-          "3.bundle.js": "3.bundle.js",
-          "3.bundle.js.map": "3.bundle.js.map",
-          "0.bundle.css": "0.bundle.css"
+        'published': {
+          'bundle.js': 'bundle.js',
+          'bundle.js.map': 'bundle.js.map',
+          '1.bundle.js': '1.bundle.js',
+          '1.bundle.js.map': '1.bundle.js.map',
+          '2.bundle.js': '2.bundle.js',
+          '2.bundle.js.map': '2.bundle.js.map',
+          '3.bundle.js': '3.bundle.js',
+          '3.bundle.js.map': '3.bundle.js.map',
+          '0.bundle.css': '0.bundle.css'
         },
-        "entry": "bundle.js",
-        "usedModules": []
+        'entry': 'bundle.js',
+        'usedModules': []
       });
 
       done();
@@ -154,49 +154,49 @@ describe('loader plugin', function() {
       var pack = JSON.parse(fs.readFileSync(outputDir + '/circus.json').toString());
       delete pack.circusVersion;   // To avoid erroring the tests
       expect(pack).to.eql({
-        "bootstrap": "bootstrap.js",
-        "components": [],
-        "chunks": [
-          {"js": "bundle.js"},
-          {"js": "1.bundle.js"},
-          {"js": "2.bundle.js"}
+        'bootstrap': 'bootstrap.js',
+        'components': [],
+        'chunks': [
+          {'js': 'bundle.js'},
+          {'js': '1.bundle.js'},
+          {'js': '2.bundle.js'}
         ],
-        "modules": {
-          "0": {
-            "chunk": 0,
-            "name": "pack/test/fixtures/loader-multiple"
+        'modules': {
+          '0': {
+            'chunk': 0,
+            'name': 'pack/test/fixtures/loader-multiple'
           },
-          "1": {
-            "chunk": 1,
-            "name": "pack/test/fixtures/router1"
+          '1': {
+            'chunk': 1,
+            'name': 'pack/test/fixtures/router1'
           },
-          "2": {
-            "chunk": 2,
-            "name": "pack/test/fixtures/router-imported"
+          '2': {
+            'chunk': 2,
+            'name': 'pack/test/fixtures/router-imported'
           }
         },
-        "routes": {
-          "/foo": 2,
-          "/bar": 2
+        'routes': {
+          '/foo': 2,
+          '/bar': 2
         },
-        "files": [
-          "bundle.js",
-          "bundle.js.map",
-          "1.bundle.js",
-          "1.bundle.js.map",
-          "2.bundle.js",
-          "2.bundle.js.map"
+        'files': [
+          'bundle.js',
+          'bundle.js.map',
+          '1.bundle.js',
+          '1.bundle.js.map',
+          '2.bundle.js',
+          '2.bundle.js.map'
         ],
-        "published": {
-          "bundle.js": "bundle.js",
-          "bundle.js.map": "bundle.js.map",
-          "1.bundle.js": "1.bundle.js",
-          "1.bundle.js.map": "1.bundle.js.map",
-          "2.bundle.js": "2.bundle.js",
-          "2.bundle.js.map": "2.bundle.js.map"
+        'published': {
+          'bundle.js': 'bundle.js',
+          'bundle.js.map': 'bundle.js.map',
+          '1.bundle.js': '1.bundle.js',
+          '1.bundle.js.map': '1.bundle.js.map',
+          '2.bundle.js': '2.bundle.js',
+          '2.bundle.js.map': '2.bundle.js.map'
         },
-        "entry": "bundle.js",
-        "usedModules": []
+        'entry': 'bundle.js',
+        'usedModules': []
       });
 
       done();
@@ -207,7 +207,7 @@ describe('loader plugin', function() {
 
     var config = {
       entry: entry,
-      output: {path: outputDir},
+      output: {path: outputDir}
     };
     config = CircusRouter.config(config);
     config = Circus.config(config);
@@ -226,7 +226,7 @@ describe('loader plugin', function() {
 
     var config = {
       entry: entry,
-      output: {path: outputDir},
+      output: {path: outputDir}
     };
     config = CircusRouter.config(config);
     config = Circus.config(config);
@@ -244,7 +244,7 @@ describe('loader plugin', function() {
 
     var config = {
       entry: entry,
-      output: {path: outputDir},
+      output: {path: outputDir}
     };
     config = CircusRouter.config(config);
     config = Circus.config(config);

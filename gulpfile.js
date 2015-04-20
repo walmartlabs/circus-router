@@ -1,12 +1,3 @@
-/*
-  gulpfile.js
-  ===========
-  Each task has been broken out into its own file in build/tasks. Any file in that folder gets
-  automatically required by the loop in ./gulp/index.js (required below).
-
-  To add a new task, simply add a new task file to ./build/tasks.
-*/
-
 var gulp = require('gulp'),
     eslint = require('gulp-eslint'),
     istanbul = require('gulp-istanbul'),
@@ -20,18 +11,18 @@ var mochaTests = [
 ];
 
 gulp.task('eslint', function() {
-  return gulp.src(source)
+  return gulp.src(Array.prototype.concat(source, mochaTests))
     .pipe(eslint())
     .pipe(eslint.format('stylish'))
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('mocha', function() {
+gulp.task('mocha', ['lint'], function() {
   return gulp.src(mochaTests, {read: false})
       .pipe(mocha());
 });
 
-gulp.task('coverage', function(done) {
+gulp.task('coverage', ['lint'], function(done) {
   gulp.src(source)
     .pipe(istanbul())
     .pipe(istanbul.hookRequire())
