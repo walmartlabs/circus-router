@@ -93,6 +93,7 @@ describe('loader plugin', function() {
           'bundle.js',
           '0.bundle.css',
           'bundle.js.map',
+          '0.bundle.css.map',
           '1.bundle.js',
           '1.bundle.js.map',
           '2.bundle.js',
@@ -109,7 +110,8 @@ describe('loader plugin', function() {
           '2.bundle.js.map': '2.bundle.js.map',
           '3.bundle.js': '3.bundle.js',
           '3.bundle.js.map': '3.bundle.js.map',
-          '0.bundle.css': '0.bundle.css'
+          '0.bundle.css': '0.bundle.css',
+          '0.bundle.css.map': '0.bundle.css.map'
         },
         'entry': 'bundle.js',
         'usedModules': []
